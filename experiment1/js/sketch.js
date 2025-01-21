@@ -1,79 +1,106 @@
 // sketch.js - purpose and description here
-// Author: Your Name
-// Date:
+// Author: Kaylee Morales 
+// Date: 01/21/2025
 
-// Here is how you might set up an OOP p5.js project
-// Note that p5.js looks for a file called sketch.js
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-const VALUE1 = 1;
-const VALUE2 = 2;
+const numMolds = 100; // Number of molds
+let drawingActive = true;
+let baseColors = []; // Array for base colors
+let useCurvedLines = false; // To toggle between straight and curved lines
 
 // Globals
-let myInstance;
+let molds = [];
 let canvasContainer;
 var centerHorz, centerVert;
 
-class MyClass {
-    constructor(param1, param2) {
-        this.property1 = param1;
-        this.property2 = param2;
+class Mold {
+    constructor() {
+        this.x = width / 2; // Start at the center horizontally
+        this.y = height / 2; // Start at the center vertically
+        this.heading = random(360); // Random initial direction
+        this.speed = random(0.5, 1.5); // Slower speed for smoother movement
+        this.baseColor = random(baseColors); // Assign a random base color
+        this.amplitude = random(15, 35); // Slightly increased wave height
+        this.frequency = random(0.02, 0.05); // Slower wave frequency
     }
 
-    myMethod() {
-        // code to run when method is called
+    update() {
+        this.x += this.speed * cos(this.heading);
+        this.y += this.speed * sin(this.heading);
+        this.x = (this.x + width) % width; // Wrap around the edges
+        this.y = (this.y + height) % height;
+    }
+
+    display() {
+        const pulse = Mold.pulseStroke();
+        const dynamicColor = color(
+          red(this.baseColor) * pulse / 12,
+          green(this.baseColor) * pulse / 12,
+          blue(this.baseColor) * pulse / 12
+        );
+        stroke(dynamicColor);
+        strokeWeight(pulse);
+        if (useCurvedLines) {
+            this.drawWave();
+        } else {
+            this.drawStraightLine();
+        }
+    }
+
+    drawStraightLine() {
+        line(this.x, this.y, this.x + cos(this.heading) * 10, this.y + sin(this.heading) * 10);
+    }
+
+    drawWave() {
+        const cx1 = this.x + cos(this.heading + 45) * 10;
+        const cy1 = this.y + sin(this.heading + 45) * 10 + this.amplitude * sin(frameCount * this.frequency);
+        const cx2 = this.x + cos(this.heading - 45) * 15;
+        const cy2 = this.y + sin(this.heading - 45) * 15 - this.amplitude * cos(frameCount * this.frequency);
+        const ex = this.x + cos(this.heading) * 20;
+        const ey = this.y + sin(this.heading) * 20;
+        noFill();
+        bezier(this.x, this.y, cx1, cy1, cx2, cy2, ex, ey);
+    }
+
+    static pulseStroke() {
+        return 2 + 10 * abs(sin(millis() / 2000));
     }
 }
 
-function resizeScreen() {
-  centerHorz = canvasContainer.width() / 2; // Adjusted for drawing logic
-  centerVert = canvasContainer.height() / 2; // Adjusted for drawing logic
-  console.log("Resizing...");
-  resizeCanvas(canvasContainer.width(), canvasContainer.height());
-  // redrawCanvas(); // Redraw everything based on new size
-}
-
-// setup() function is called once when the program starts
 function setup() {
-  // place our canvas, making it fit our container
-  canvasContainer = $("#canvas-container");
-  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
-  canvas.parent("canvas-container");
-  // resize canvas is the page is resized
+    canvasContainer = $("#canvas-container");
+    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+    canvas.parent("canvas-container");
 
-  // create an instance of the class
-  myInstance = new MyClass("VALUE1", "VALUE2");
+    baseColors = [
+        color(143, 89, 153),
+        color(112, 170, 240),
+        color(194, 222, 219),
+        color(234, 179, 248)
+    ];
 
-  $(window).resize(function() {
-    resizeScreen();
-  });
-  resizeScreen();
+    for (let i = 0; i < numMolds; i++) {
+        molds.push(new Mold());
+    }
+
+    $(window).resize(function() {
+        resizeCanvas(canvasContainer.width(), canvasContainer.height());
+    });
 }
 
-// draw() function is called repeatedly, it's the main animation loop
 function draw() {
-  background(220);    
-  // call a method on the instance
-  myInstance.myMethod();
+    if (drawingActive) {
+        background(255);
+        molds.forEach(mold => {
+            mold.update();
+            mold.display();
+        });
 
-  // Set up rotation for the rectangle
-  push(); // Save the current drawing context
-  translate(centerHorz, centerVert); // Move the origin to the rectangle's center
-  rotate(frameCount / 100.0); // Rotate by frameCount to animate the rotation
-  fill(234, 31, 81);
-  noStroke();
-  rect(-125, -125, 250, 250); // Draw the rectangle centered on the new origin
-  pop(); // Restore the original drawing context
-
-  // The text is not affected by the translate and rotate
-  fill(255);
-  textStyle(BOLD);
-  textSize(140);
-  text("p5*", centerHorz - 105, centerVert + 40);
+        if (millis() > 10000) {
+            drawingActive = false;
+        }
+    }
 }
 
-// mousePressed() function is called once after every time a mouse button is pressed
 function mousePressed() {
-    // code to run when mouse is pressed
+    useCurvedLines = !useCurvedLines;
 }
