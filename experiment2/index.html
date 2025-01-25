@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 3 - Generative Methods</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -17,9 +17,10 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
+	<!-- p5.js and p5.sound.js libraries -->
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
-
+	<!-- Load p5.sound library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/addons/p5.sound.min.js"></script>
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" DEFER></script>
 	<!-- Use me for a JavaScript OOP Project -->
@@ -32,7 +33,7 @@
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 3 - Generative Methods</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
@@ -45,17 +46,17 @@
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>In this experiment, I am trying to replicate a day and night cycle with generative methods that the user can control by clicking on the image to change it to day or night. I was also able to further learn and create lunar phases in this experiment and replicate clouds! Every time it turns night, look at the moon to notice the changes!</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>The day and night cycle is controlled through a draw() function that updates the canvas based on the isDay variable, which toggles upon user click. The lunar phases are managed using an array of objects, each detailing visual offsets and full moon status, affecting the moon's visual representation based on the moonPhaseIndex. Clouds are procedurally generated and stored in an array, with each object maintaining its position, size, and speed to simulate movement across the screen. When clouds traverse beyond the canvas, they reset to continue the cycle seamlessly.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>I worked on this project alone and thoroughly enjoyed the process. The main challenge was synchronizing the day and night transitions with the lunar phases, which required rendering adjustments. It was rewarding to see the interactive elements come together, creating a dynamic simulation that responds to the user's inputs. </p>
 			</div>
 
 		</section>
