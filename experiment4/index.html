@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 5 - 3D Graphics</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 5 - 3D Graphics</h1>
+
+			<div class="minor-section">
+				<div id="canvas-container">
+					<!-- canvas will be added here -->
+				</div>
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>In this project, I delve into the complexities of mental health through an interactive 3D web application. Users input their feelings, which in turn dynamically alter the visual representation of a 3D shape, symbolizing the profound impact of words on mental states. This piece draws inspiration from the visual and thematic depth of the changing sphere in the referenced p5.js sketch, which I aim to mirror while adding my unique perspective on mental health.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p> The core of the application are 3d shapes, which are a sphere and a cube. These shapes change in response to user input. The sphere's and cube's transformation represents the emotional and psychological changes triggered by the user's words. Starting with simple shapes as a base, I was able to learn how to create a dynamic piece and learn how to even do 3D things. I modified the dimensions and interactions to better fit the project's theme. The input from users triggers a change in the sphere’s color and size, simulating an emotional impact. To enhance interactivity, I introduced a glitch effect, inspired by Cyberpunk 2077's aesthetics, to represent the sometimes chaotic nature of mental processes. This effect visually distorts the sphere when new input is provided, reverting to its original state as a metaphor for transient thoughts and emotions.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p> I started with little knowledge about 3D modeling. This lack of experience made the initial phases both daunting and exciting as I ventured into the technical territories. The challenge was not just about learning to manipulate 3D shapes but also about integrating interactive elements with the shapes and how I wanted to create this. Ultimately, the project became much more than a technical challenge. It was a personal journey that mirrored the introspective and transformative experience I hoped to create for users. </p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>

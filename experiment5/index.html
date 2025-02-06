@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment X - Subject/Topic</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment X - Subject/Topic</h1>
+
+			<div class="minor-section">
+				<div id="canvas-container">
+					<!-- canvas will be added here -->
+				</div>
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>In this experiment, I aimed to recreate a visually iconic scene from Cyberpunk 2077, where the main characters V and Johnny are enveloped in a glitch/holographic effect. Inspired by this, I developed an interactive web application that allows users to manipulate live video footage to simulate their own version of this Cyberpunk scene. By using user input, participants can dynamically alter the visual elements, adding blue glitch effects to the scene, making each interaction unique and personal.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p> I started by setting up a live video feed from the user's webcam, which serves as the canvas for the glitch effects. To achieve the holographic glitch effect, I used motion detection algorithms that analyze the difference between consecutive video frames to identify movement. When movement is detected, a red glitch effect is applied to these areas. Additionally, I implemented an interactive feature where users can move their mouse over the video to change parts of the glitch effect from red to blue, creating a dynamic interaction that mimics the aesthetic of Cyberpunk 2077. The intensity of this effect gradually fades, adding a trailing visual that enhances the cybernetic feel of the interaction.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p>For this experiment, I worked on it by myself. I did encounter several challenges and learning opportunities. One of the main difficulties was the motion detection to responsively and accurately apply the glitch effect. The success of creating a visually appealing and interactive piece that effectively captured the essence of Cyberpunk 2077's aesthetic was incredibly rewarding. This project not only enhanced my technical skills in working with real-time video capturing but also deepened my understanding of interactive media design.</p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
