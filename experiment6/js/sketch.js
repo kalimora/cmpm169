@@ -46,14 +46,14 @@ function setup() {
     let xPosition = saveButton.x + saveButton.width + 20;
     for (const [mood, color] of Object.entries(moods)) {
         let button = createButton(mood);
-        button.position(xPosition + 130, 100);
+        button.position(xPosition + 100, 100);
         button.mousePressed(() => selectedColor = color);
         xPosition += button.width + 10;
     }
 
     notesTextArea = createElement('textarea', '');
     notesTextArea.position(80, 430);
-    notesTextArea.size(780, 90);
+    notesTextArea.size(600, 90);
     notesTextArea.attribute('placeholder', 'Click a day to add/view notes...');
 
     year = new Date().getFullYear();
