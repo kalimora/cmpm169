@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 7 - Data Visualiation</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 7 - Data Visualiation </h1>
+
+			<div class="minor-section">
+				<div id="canvas-container">
+					<!-- canvas will be added here -->
+				</div>
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>In 'Mood Tracker,' I explore the visualization of emotional states over time through an interactive calendar. This project allows users to record their daily moods using a color coded system, offering a visual representation of mood variations throughout the year. By providing a platform to monitor emotional trends, this application aims to enhance self-awareness and emotional well-being. </p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p> The core of this application involves creating an interactive calendar that users can engage with to track their moods. Each day on the calendar can be color-coded according to the user's mood, using predefined colors associated with different emotional states like happiness, sadness, anger, and excitement. The calendar accounts for leap years, ensuring accurate day tracking. Users can click on any day to update their mood and add notes for more detailed reflection. Data is saved locally on the user's device to maintain their history across sessions. </p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p> Starting this project, I drew inspiration from my routine journaling habit, aiming to digitize and simplify the process of mood tracking. The idea was sparked by the potential of interactive calendars in personal health tech, particularly for mental health tracking.  </p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
