@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 8 - Machine Learning</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 8 - Machine Learning </h1>
+
+			<div class="minor-section">
+				<div id="canvas-container">
+					<!-- canvas will be added here -->
+				</div>
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>I explore the intersection of machine learning and interactive gaming by creating a face-tracking cat filter that doubles as a mini-game. This project transforms face detection technology into an engaging and playful experience where users become a cat and catch floating fish by opening their mouth. By integrating BlazeFace for facial recognition and p5.js for rendering, this game provides a fun, interactive way to engage with AI-powered face tracking. </p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p> The core of this application is a real-time face tracking system that uses BlazeFace (a lightweight facial detection model) to detect the user's nose, mouth, and ears. Based on these facial landmarks, the program superimposes cat ears, a tiny nose, whiskers, and a dynamic mouth onto the user's face. The interactive game mechanic is built by spawning floating fish at random positions on the screen. The program continuously checks the mouth's position and openness—if the user opens their mouth near a fish, the game registers a "catch" and increases the score.  </p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p> This project was inspired by filters on social media apps and the potential of machine learning in gaming. The idea emerged from wanting to explore how facial tracking can be used beyond filters, turning passive experiences into active gameplay. Developing Cat Catch allowed me to experiment with real-time facial landmark tracking, interactive overlays, and game logic triggered by facial movements. This project showcases the creative potential of machine learning-powered interactions.  </p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
